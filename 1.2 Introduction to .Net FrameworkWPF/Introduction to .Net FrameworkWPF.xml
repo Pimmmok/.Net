@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>1.2_Introduction to .Net FrameworkWPF</name>
+    </assembly>
+    <members>
+        <member name="T:Introduction_to_.Net_FrameworkWPF.App">
+            <summary>
+            Interaction logic for App.xaml
+            </summary>
+            <summary>
+            App
+            </summary>
+        </member>
+        <member name="M:Introduction_to_.Net_FrameworkWPF.App.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:Introduction_to_.Net_FrameworkWPF.App.Main">
+            <summary>
+            Application Entry Point.
+            </summary>
+        </member>
+        <member name="T:Introduction_to_.Net_FrameworkWPF.FileCoordinateWPFReaderWpfProgram">
+            <summary>
+            Class for reading data from the file.
+            </summary>
+        </member>
+        <member name="M:Introduction_to_.Net_FrameworkWPF.FileCoordinateWPFReaderWpfProgram.ReadData">
+            <summary>
+            Implementation of the data reading interface. Reading data from the file.
+            </summary>
+            <returns> Collection of read coordinates. </returns>
+        </member>
+        <member name="T:Introduction_to_.Net_FrameworkWPF.FileCoordinateWriterWpfProgram">
+            <summary>
+            File writing class.
+            </summary>
+        </member>
+        <member name="M:Introduction_to_.Net_FrameworkWPF.FileCoordinateWriterWpfProgram.WriteData(System.Collections.Generic.IList{Introduction_to_.Net_Framework.Coordinate})">
+            <summary>
+            Implementation of the recorded data interface. Writing data to the file.
+            </summary>
+            <param name="coordinates"> Сollection of recorded coordinates. </param>
+        </member>
+        <member name="T:Introduction_to_.Net_FrameworkWPF.MainWindow">
+            <summary>
+            Interaction logic for MainWindow.xaml
+            </summary>
+            <summary>
+            MainWindow
+            </summary>
+        </member>
+        <member name="M:Introduction_to_.Net_FrameworkWPF.MainWindow.#ctor">
+            <summary>
+            WPF-application entry point.
+            </summary>
+        </member>
+        <member name="M:Introduction_to_.Net_FrameworkWPF.MainWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Introduction_to_.Net_FrameworkWPF.TextBoxCoordinateReader">
+            <summary>
+            Class for reading data from the textbox.
+            </summary>
+        </member>
+        <member name="F:Introduction_to_.Net_FrameworkWPF.TextBoxCoordinateReader._textBox">
+            <summary>
+            A field for a link to a textbox.
+            </summary>
+        </member>
+        <member name="M:Introduction_to_.Net_FrameworkWPF.TextBoxCoordinateReader.#ctor(System.Windows.Controls.TextBox)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="textBox"> A link to a textbox. </param>
+        </member>
+        <member name="M:Introduction_to_.Net_FrameworkWPF.TextBoxCoordinateReader.ReadData">
+            <summary>
+            Implementation of the data reading interface. Reading data from the textbox.
+            </summary>
+            <returns> Collection of read coordinates. </returns>
+        </member>
+        <member name="T:Introduction_to_.Net_FrameworkWPF.TextBoxCoordinateWriter">
+            <summary>
+            Textbox writing class.
+            </summary>
+        </member>
+        <member name="F:Introduction_to_.Net_FrameworkWPF.TextBoxCoordinateWriter._textBox">
+            <summary>
+            A field for a link to a textbox.
+            </summary>
+        </member>
+        <member name="M:Introduction_to_.Net_FrameworkWPF.TextBoxCoordinateWriter.#ctor(System.Windows.Controls.TextBox)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="textBox"> A link to a textbox. </param>
+        </member>
+        <member name="M:Introduction_to_.Net_FrameworkWPF.TextBoxCoordinateWriter.WriteData(System.Collections.Generic.IList{Introduction_to_.Net_Framework.Coordinate})">
+            <summary>
+            Implementation of the recorded data interface. Writing data to the textbox.
+            </summary>
+            <param name="coordinates"> Сollection of recorded coordinates. </param>
+        </member>
+    </members>
+</doc>

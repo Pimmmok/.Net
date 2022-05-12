@@ -1,0 +1,135 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>1.1_Introduction to .Net Framework</name>
+    </assembly>
+    <members>
+        <member name="T:Introduction_to_.Net_Framework.ConsoleCoordinateReader">
+            <summary>
+            Class for reading data from the console.
+            </summary>
+        </member>
+        <member name="M:Introduction_to_.Net_Framework.ConsoleCoordinateReader.ReadData">
+            <summary>
+            Implementation of the data read interface. Reading data from the console.
+            </summary>
+            <returns> Collection of read coordinates. </returns>
+        </member>
+        <member name="T:Introduction_to_.Net_Framework.ConsoleCoordinateWriter">
+            <summary>
+            Console writing class.
+            </summary>
+        </member>
+        <member name="M:Introduction_to_.Net_Framework.ConsoleCoordinateWriter.WriteData(System.Collections.Generic.IList{Introduction_to_.Net_Framework.Coordinate})">
+            <summary>
+            Recording interface implementation. Writing data to the console.
+            </summary>
+            <param name="coordinates"> Сollection of recorded coordinates. </param>
+        </member>
+        <member name="T:Introduction_to_.Net_Framework.Context`1">
+            <summary>
+            The class that is the data context.
+            </summary>
+            <typeparam name="T"> Data type parameter. </typeparam>
+        </member>
+        <member name="P:Introduction_to_.Net_Framework.Context`1.Data">
+            <summary>
+            Data collection
+            </summary>
+        </member>
+        <member name="P:Introduction_to_.Net_Framework.Context`1.DataReader">
+            <summary>
+            Properties setting how data is read.
+            </summary>
+        </member>
+        <member name="P:Introduction_to_.Net_Framework.Context`1.DataWriter">
+            <summary>
+            Properties setting how data is write.
+            </summary>
+        </member>
+        <member name="M:Introduction_to_.Net_Framework.Context`1.#ctor(Introduction_to_.Net_Framework.IDataReader{`0},Introduction_to_.Net_Framework.IDataWriter{`0})">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="dataReader"> Setting how data is read. </param>
+            <param name="dataWriter"> Setting how data is write. </param>
+        </member>
+        <member name="M:Introduction_to_.Net_Framework.Context`1.ExecuteDataProcessing">
+            <summary>
+            Setting the way to read and write data.
+            </summary>
+        </member>
+        <member name="T:Introduction_to_.Net_Framework.Coordinate">
+            <summary>
+            Сoordinate type.
+            </summary>
+        </member>
+        <member name="P:Introduction_to_.Net_Framework.Coordinate.CoordinateX">
+            <summary>
+            Сoordinate X.
+            </summary>
+        </member>
+        <member name="P:Introduction_to_.Net_Framework.Coordinate.CoordinateY">
+            <summary>
+            Сoordinate Y.
+            </summary>  
+        </member>
+        <member name="M:Introduction_to_.Net_Framework.Coordinate.ToString">
+            <summary>
+            Formatting coordinates to string.
+            </summary>
+            <returns> Text coordinates. </returns>
+        </member>
+        <member name="T:Introduction_to_.Net_Framework.FileCoordinateReader">
+            <summary>
+            Class for reading data from the file.
+            </summary>
+        </member>
+        <member name="M:Introduction_to_.Net_Framework.FileCoordinateReader.ReadData">
+            <summary>
+            Implementation of the data reading interface. Reading data from the file.
+            </summary>
+            <returns> Collection of read coordinates. </returns>
+        </member>
+        <member name="T:Introduction_to_.Net_Framework.FileCoordinateWriter">
+            <summary>
+            Class for recording data to the file.
+            </summary>
+        </member>
+        <member name="M:Introduction_to_.Net_Framework.FileCoordinateWriter.WriteData(System.Collections.Generic.IList{Introduction_to_.Net_Framework.Coordinate})">
+            <summary>
+            Recording interface implementation. Writing data to the file.
+            </summary>
+            <param name="coordinates"> Сollection of recorded coordinates. </param>
+        </member>
+        <member name="T:Introduction_to_.Net_Framework.IDataReader`1">
+            <summary>
+            Data reading interface.
+            </summary>
+            <typeparam name="T"> Data type parameter. </typeparam>
+        </member>
+        <member name="M:Introduction_to_.Net_Framework.IDataReader`1.ReadData">
+            <summary>
+            Data reading method.
+            </summary>
+            <returns> Data collection. </returns>
+        </member>
+        <member name="T:Introduction_to_.Net_Framework.IDataWriter`1">
+            <summary>
+            Data writing interface.
+            </summary>
+            <typeparam name="T"> Data type parameter. </typeparam>
+        </member>
+        <member name="M:Introduction_to_.Net_Framework.IDataWriter`1.WriteData(System.Collections.Generic.IList{`0})">
+            <summary>
+            Data recording method.
+            </summary>
+            <param name="data"> Data collection. </param>
+        </member>
+        <member name="M:Introduction_to_.Net_Framework.Program.Main">
+            <summary>
+            Сonsole I / O.
+            </summary>
+        </member>
+    </members>
+</doc>

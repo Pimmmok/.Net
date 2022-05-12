@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>_5._2_Incapsulation_and_overriding.Tests</RootNamespace>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NUnit" Version="3.12.0" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.16.1" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\5.2_Incapsulation and overriding\5.2_Incapsulation and overriding.csproj" />
+  </ItemGroup>
+
+</Project>

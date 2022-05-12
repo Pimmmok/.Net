@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>_12._Linq</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NUnit" Version="3.13.2" />
+    <PackageReference Include="System.IO.Abstractions.TestingHelpers" Version="16.1.10" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\11._Collections and Generics\11.1_Collections and Generics.csproj" />
+  </ItemGroup>
+
+</Project>

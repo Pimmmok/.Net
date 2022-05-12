@@ -1,0 +1,179 @@
+﻿<Window x:Class="_3._Methods.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Расчет НОД" Height="450" Width="800">
+    <Grid x:Name="MainGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="ButtonEuclidCalculate" Content="Посчитать с помощью алгоритма Евклида" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="ButtonEuclidCalculate_Click"/>
+        <Button x:Name="ButtonSteinCalculate" Content="Посчитать с помощью алгоритма Стейна" Grid.Column="1" Grid.Row="2" VerticalAlignment="Stretch" Click="ButtonSteinCalculate_Click">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="IsEnabled" Value="False"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding ElementName= checkBoxTwo, Path=IsChecked}" Value="True">
+                            <Setter Property="IsEnabled" Value="True"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Button x:Name="ButtonCompareAlgorithms" Content="Сравнение времени (мск)" Grid.Column="1" Grid.Row="3" VerticalAlignment="Stretch" Click="ButtonCompareAlgorithms_Click">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="IsEnabled" Value="False"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding ElementName= checkBoxTwo, Path=IsChecked}" Value="True">
+                            <Setter Property="IsEnabled" Value="True"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Button x:Name="ButtonCompareAlgorithmsVertical" Content="Сравнение времени (мск, вертикальный график)" 
+                Grid.Column="2" Grid.Row="3" VerticalAlignment="Stretch" Click="ButtonCompareAlgorithmsVertical_Click">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="IsEnabled" Value="False"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding ElementName= checkBoxTwo, Path=IsChecked}" Value="True">
+                            <Setter Property="IsEnabled" Value="True"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Button x:Name="ButtonReset" Content="Сброс введенных данных" Grid.Column="2" Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="ButtonReset_Click"/>
+        <TextBox x:Name="textBoxResult" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Stretch" TextWrapping="Wrap" VerticalAlignment= "Stretch" TextAlignment="Center" FontSize="16" IsReadOnly="True" />
+        <Label x:Name="labelNumberOne" Content="Ввод первого числа (целое)" Grid.Column="0" Grid.Row="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+        <TextBox x:Name="textBoxNumberOne" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Stretch" TextWrapping="Wrap" VerticalAlignment= "Stretch" TextAlignment="Center" FontSize="20" />
+        <Label x:Name="labelResult" Content="Результат" Grid.Column="2" Grid.Row="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+        <Label x:Name="labelNumberTwo" Content="Ввод второго числа (целое)" Grid.Column="0" Grid.Row="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+        <TextBox x:Name="textBoxNumberTwo" Grid.Column="0" Grid.Row="3" HorizontalAlignment="Stretch" TextWrapping="Wrap" VerticalAlignment= "Stretch" TextAlignment="Center" FontSize="20" />
+        <Label x:Name="labelNumberThree" Content="Ввод третьего числа (целое)" Grid.Column="0" Grid.Row="4" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+            <Label.Style>
+                <Style TargetType="{x:Type Label}">
+                    <Setter Property="Visibility" Value="Hidden"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding ElementName= checkBoxThree, Path=IsChecked}" Value="True">
+                            <Setter Property="Visibility" Value="Visible"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding ElementName= checkBoxFour, Path=IsChecked}" Value="True">
+                            <Setter Property="Visibility" Value="Visible"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding ElementName= checkBoxFive, Path=IsChecked}" Value="True">
+                            <Setter Property="Visibility" Value="Visible"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Label.Style>
+        </Label>
+        <TextBox x:Name="textBoxNumberThree" Grid.Column="0" Grid.Row="5" HorizontalAlignment="Stretch" TextWrapping="Wrap" VerticalAlignment= "Stretch" TextAlignment="Center" FontSize="20">
+            <TextBox.Style>
+                <Style TargetType="{x:Type TextBox}">
+                    <Setter Property="Visibility" Value="Hidden"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding ElementName= checkBoxThree, Path=IsChecked}" Value="True">
+                            <Setter Property="Visibility" Value="Visible"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding ElementName= checkBoxFour, Path=IsChecked}" Value="True">
+                            <Setter Property="Visibility" Value="Visible"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding ElementName= checkBoxFive, Path=IsChecked}" Value="True">
+                            <Setter Property="Visibility" Value="Visible"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBox.Style>
+        </TextBox>
+        <Label x:Name="labelNumberFour" Content="Ввод четвертого числа (целое)" Grid.Column="0" Grid.Row="6" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+            <Label.Style>
+                <Style TargetType="{x:Type Label}">
+                    <Setter Property="Visibility" Value="Hidden"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding ElementName= checkBoxFour, Path=IsChecked}" Value="True">
+                            <Setter Property="Visibility" Value="Visible"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding ElementName= checkBoxFive, Path=IsChecked}" Value="True">
+                            <Setter Property="Visibility" Value="Visible"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Label.Style>
+        </Label>
+        <TextBox x:Name="textBoxNumberFour" Grid.Column="0" Grid.Row="7" HorizontalAlignment="Stretch" TextWrapping="Wrap" VerticalAlignment= "Stretch" TextAlignment="Center" FontSize="20" >
+            <TextBox.Style>
+                <Style TargetType="{x:Type TextBox}">
+                    <Setter Property="Visibility" Value="Hidden"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding ElementName= checkBoxFour, Path=IsChecked}" Value="True">
+                            <Setter Property="Visibility" Value="Visible"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding ElementName= checkBoxFive, Path=IsChecked}" Value="True">
+                            <Setter Property="Visibility" Value="Visible"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBox.Style>
+        </TextBox>
+        <Label x:Name="labelNumberFive" Content="Ввод пятого числа (целое)" Grid.Column="0" Grid.Row="8" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+            <Label.Style>
+                <Style TargetType="{x:Type Label}">
+                    <Setter Property="Visibility" Value="Hidden"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding ElementName= checkBoxFive, Path=IsChecked}" Value="True">
+                            <Setter Property="Visibility" Value="Visible"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Label.Style>
+
+        </Label>
+        <TextBox x:Name="textBoxNumberFive" Grid.Column="0" Grid.Row="9" HorizontalAlignment="Stretch" TextWrapping="Wrap" VerticalAlignment= "Stretch" TextAlignment="Center" FontSize="20">
+            <TextBox.Style>
+                <Style TargetType="{x:Type TextBox}">
+                    <Setter Property="Visibility" Value="Hidden"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding ElementName= checkBoxFive, Path=IsChecked}" Value="True">
+                            <Setter Property="Visibility" Value="Visible"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBox.Style>
+        </TextBox>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <CheckBox x:Name="checkBoxTwo" Content="2 числа" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Checked="CheckBoxTwo_Checked"/>
+            <CheckBox x:Name="checkBoxThree" Content="3 числа" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Checked="CheckBoxThree_Checked" />
+            <CheckBox x:Name="checkBoxFour" Content="4 числа" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Checked="CheckBoxFour_Checked"/>
+            <CheckBox x:Name="checkBoxFive" Content="5 чисел" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Checked="CheckBoxFive_Checked" />
+        </Grid>
+        <Grid x:Name="diagramGrid" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2" Grid.RowSpan="6">
+        </Grid>
+    </Grid>
+</Window>
